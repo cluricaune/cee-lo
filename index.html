@@ -2,14 +2,19 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
-        <script src="ceelo.js"></script>
+        <script src="ceelo.js" defer></script>
     </head>
     <body>
-        <div>
+        <div id="main">
             <h1>
                 Cee-lo!
             </h1>
-            <button onclick="threeRoll()">Roll the dice!</button>
+            <div id="dicediv">
+                <img src="/imgs/dicefaces/die6.png" class="dice" id="dieface1">
+                <img src="/imgs/dicefaces/die6.png" class="dice" id="dieface2">
+                <img src="/imgs/dicefaces/die6.png" class="dice" id="dieface3">
+            </div>
+            <button id="rollDice">Roll the dice!</button>
             <p id="p"></p>
         </div>
     </body>
