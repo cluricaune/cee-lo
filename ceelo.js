@@ -48,20 +48,22 @@ function threeRoll() {
 }
 
 function myAnimation() {
-    let id = setInterval(animDice, 50);
+    let id = setInterval(animDice, 5);
     let count = 0;
     let pos = 0;
     function animDice() {
-        if (count > 100) {
-            clearInterval(id);
-        } else if (count > 50) {
-            document.querySelector("#dieface1").style.top = pos + "px";
-            console.log(document.querySelector("#dieface1").style.top = pos + "px");
-            pos--;
-        } else {
+        if (count >= 0 && count <= 50) {
             document.querySelector("#dieface1").style.top = pos + "px";
             console.log(document.querySelector("#dieface1").style.top = pos + "px");
             pos++;
+        } else if (count <= 150 && count > 50) {
+            document.querySelector("#dieface1").style.top = pos + "px";
+            pos--;
+        } else if (count <= 200 && count > 150) {
+            document.querySelector("#dieface1").style.top = pos + "px";
+            pos++;
+        } else {
+            clearInterval(id);
         }
         count++;
     }
