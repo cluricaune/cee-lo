@@ -36,5 +36,9 @@ function threeRoll() {
     }
 }
 
-const rollDice = document.getElementById("rollDice");
-rollDice.addEventListener(`click`, threeRoll);
+const rollDice1 = document.querySelector("#dieface1");
+rollDice1.addEventListener(`click`, threeRoll);
+const rollDice2 = document.querySelector("#dieface2");
+rollDice2.addEventListener(`click`, threeRoll);
+const rollDice3 = document.querySelector("#dieface3");
+rollDice3.addEventListener(`click`, threeRoll);
