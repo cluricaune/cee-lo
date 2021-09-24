@@ -47,8 +47,29 @@ function threeRoll() {
     }
 }
 
+function myAnimation() {
+    let id = setInterval(animDice, 50);
+    let count = 0;
+    let pos = 0;
+    function animDice() {
+        if (count > 100) {
+            clearInterval(id);
+        } else if (count > 50) {
+            document.querySelector("#dieface1").style.top = pos + "px";
+            console.log(document.querySelector("#dieface1").style.top = pos + "px");
+            pos--;
+        } else {
+            document.querySelector("#dieface1").style.top = pos + "px";
+            console.log(document.querySelector("#dieface1").style.top = pos + "px");
+            pos++;
+        }
+        count++;
+    }
+    console.log("test123");
+}
+
 const rollDice1 = document.querySelector("#dieface1");
-rollDice1.addEventListener(`click`, threeRoll);
+rollDice1.addEventListener(`click`, myAnimation);
 const rollDice2 = document.querySelector("#dieface2");
 rollDice2.addEventListener(`click`, threeRoll);
 const rollDice3 = document.querySelector("#dieface3");

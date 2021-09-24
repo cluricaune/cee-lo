@@ -38,6 +38,8 @@ body {
     justify-content: center;
 }
 .dice {
+    display: block;
+    position: relative;
     width: 120px;
     height: auto;
     filter: drop-shadow(5px 9px 5px black);
