@@ -51,27 +51,50 @@ function myAnimation() {
     let id = setInterval(animDice, 5);
     let count = 0;
     let pos = 0;
+    let posOpp = 0;
     function animDice() {
+        let randomDie1 = singleRoll();
+        let randomDie2 = singleRoll();
+        let randomDie3 = singleRoll();
         if (count >= 0 && count <= 50) {
             document.querySelector("#dieface1").style.top = pos + "px";
-            console.log(document.querySelector("#dieface1").style.top = pos + "px");
+            document.querySelector("#dieface1").src = `imgs/dicefaces/die${randomDie1}.png`;
+            document.querySelector("#dieface2").style.top = posOpp + "px";
+            document.querySelector("#dieface2").src = `imgs/dicefaces/die${randomDie2}.png`;
+            document.querySelector("#dieface3").style.top = pos + "px";
+            document.querySelector("#dieface3").src = `imgs/dicefaces/die${randomDie3}.png`
             pos++;
+            posOpp--;
         } else if (count <= 150 && count > 50) {
             document.querySelector("#dieface1").style.top = pos + "px";
+            document.querySelector("#dieface1").src = `imgs/dicefaces/die${randomDie1}.png`;
+            document.querySelector("#dieface2").style.top = posOpp + "px";
+            document.querySelector("#dieface2").src = `imgs/dicefaces/die${randomDie2}.png`;
+            document.querySelector("#dieface3").style.top = pos + "px";
+            document.querySelector("#dieface3").src = `imgs/dicefaces/die${randomDie3}.png`
             pos--;
+            posOpp++;
         } else if (count <= 200 && count > 150) {
             document.querySelector("#dieface1").style.top = pos + "px";
+            document.querySelector("#dieface1").src = `imgs/dicefaces/die${randomDie1}.png`;
+            document.querySelector("#dieface2").style.top = posOpp + "px";
+            document.querySelector("#dieface2").src = `imgs/dicefaces/die${randomDie2}.png`;
+            document.querySelector("#dieface3").style.top = pos + "px";
+            document.querySelector("#dieface3").src = `imgs/dicefaces/die${randomDie3}.png`
             pos++;
+            posOpp--;
         } else {
-            clearInterval(id);
+            clearInterval(id)
+            threeRoll();
         }
         count++;
     }
-    console.log("test123");
 }
 
 const rollDice1 = document.querySelector("#dieface1");
-rollDice1.addEventListener(`click`, myAnimation);
+rollDice1.addEventListener(`click`, () => {
+    myAnimation();
+});
 const rollDice2 = document.querySelector("#dieface2");
 rollDice2.addEventListener(`click`, threeRoll);
 const rollDice3 = document.querySelector("#dieface3");
