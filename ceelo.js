@@ -87,15 +87,18 @@ function myAnimation() {
             clearInterval(id)
             threeRoll();
         }
+        if (count >= 0 && count <= 200) {
+            document.querySelector("#dieface1").style.transform = `rotate(${pos}deg)`;
+            document.querySelector("#dieface2").style.transform = `rotate(${posOpp}deg)`;
+            document.querySelector("#dieface3").style.transform = `rotate(${pos}deg)`;
+        }
         count++;
     }
 }
 
 const rollDice1 = document.querySelector("#dieface1");
-rollDice1.addEventListener(`click`, () => {
-    myAnimation();
-});
+rollDice1.addEventListener(`click`, myAnimation);
 const rollDice2 = document.querySelector("#dieface2");
-rollDice2.addEventListener(`click`, threeRoll);
+rollDice2.addEventListener(`click`, myAnimation);
 const rollDice3 = document.querySelector("#dieface3");
-rollDice3.addEventListener(`click`, threeRoll);
+rollDice3.addEventListener(`click`, myAnimation);
