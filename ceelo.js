@@ -9,9 +9,9 @@ function threeRoll() {
     let dice3 = singleRoll();
     let score;
 
-    document.querySelector("#dieface1").src = `/imgs/dicefaces/die${dice1}.png`;
-    document.querySelector("#dieface2").src = `/imgs/dicefaces/die${dice2}.png`;
-    document.querySelector("#dieface3").src = `/imgs/dicefaces/die${dice3}.png`;
+    document.querySelector("#dieface1").src = `imgs/dicefaces/die${dice1}.png`;
+    document.querySelector("#dieface2").src = `imgs/dicefaces/die${dice2}.png`;
+    document.querySelector("#dieface3").src = `imgs/dicefaces/die${dice3}.png`;
     
     document.getElementById("p").textContent = ``;
 
