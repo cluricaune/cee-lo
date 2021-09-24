@@ -16,6 +16,7 @@ function threeRoll() {
     if (dice1 === dice2 && dice1 === dice3) {
         document.getElementById("response").textContent = `Trips!`;
         document.getElementById("response").style.color = `#00EA11`;
+        document.getElementById("scorenum").textContent = `Trips ${dice1}`;
         score = dice1 * 3;
     } else if (dice1 === dice2) {
         document.getElementById("response").textContent = `Dubs`;
